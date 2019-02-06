@@ -25,8 +25,17 @@ public class AddPlayerToTeam extends AppCompatActivity {
         EditText inchesET = (EditText)this.findViewById(R.id.inchesET);
         EditText feetET = (EditText)this.findViewById(R.id.feetET);
 
-        BasketballPlayer pr = new BasketballPlayer(FirstNameET.getText().toString(), lastNameET.getText().toString(), Integer.parseInt(numberET.getText().toString(), Intent.parseIntent(ageET.getText().toString(),
-                Integer.parseInt(inchesET.getText().toString(), Integer.parseInt(feetET.getText().toString()));
-        pr.display();
+        BasketballPlayer pr = new BasketballPlayer(
+                FirstNameET.getText().toString(),
+                lastNameET.getText().toString(),
+                Integer.parseInt(numberET.getText().toString()),
+                Integer.parseInt(ageET.getText().toString()),
+                Integer.parseInt(inchesET.getText().toString()),
+                Integer.parseInt(feetET.getText().toString())
+        );
+
+        Core.addPlayerRecord(pr);
+        this.finish();
+
     }
     }

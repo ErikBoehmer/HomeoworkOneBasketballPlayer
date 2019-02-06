@@ -24,6 +24,15 @@ public class BasketballPlayer
     {
         System.out.println(this.Firstname + " " + this.Lastname + " " + this.jerseynumber + " " + this.age
                 + " " + this.heightInches + " ( " + this.heightFeet + " )");
+
+
+
+    }
+
+    public String Basket()
+    {
+        return (this.Firstname + " " + this.Lastname + " " + this.jerseynumber + " " + this.age
+                + " " + this.heightInches + " ( " + this.heightFeet + " )");
     }
     // these are getters
 
