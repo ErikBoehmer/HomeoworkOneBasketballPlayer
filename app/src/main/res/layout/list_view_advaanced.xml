@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/FirstnameTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:text="First Name" />
+
+    <TextView
+        android:id="@+id/lastNameTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:text="last name" />
+
+    <TextView
+        android:id="@+id/JerseyTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:text="Jersey Number" />
+
+    <TextView
+        android:id="@+id/ageTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:text="Age" />
+
+    <TextView
+        android:id="@+id/HeightTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:text="Feet" />
+
+    <TextView
+        android:id="@+id/InchesTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:text="Inches" />
+
+</android.widget.LinearLayout>

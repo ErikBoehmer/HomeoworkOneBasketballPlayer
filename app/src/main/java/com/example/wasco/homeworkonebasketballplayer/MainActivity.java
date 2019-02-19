@@ -1,5 +1,4 @@
 package com.example.wasco.homeworkonebasketballplayer;
-
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -8,22 +7,25 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.example.wasco.homeworkonebasketballplayer.BasketballPlayerArrayAdapter;
+
 
 public class MainActivity extends AppCompatActivity
 {
-    private ListView listView;
+    private ListView lv;
+    private BasketballPlayerArrayAdapter aa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        //initializes the array of Strings so there are place holder strings in there
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         System.out.println("****** ON CREATE!!!!!!");
-
-        Core.initializePlayers();
-        ArrayAdapter<String> aa = new ArrayAdapter<String>(this, R.layout.listviewrow, Core.Players);
-        ListView lv = (ListView)this.findViewById(R.id.listView);
-        lv.setAdapter(aa);
-        lv.invalidateViews(); //this line forces a list view to refresh!!!! hint hint
+        this.aa = new BasketballPlayerArrayAdapter(this, R.layout.list_view_advaanced, Core.thePlayers);
+        this.lv = (ListView)this.findViewById(R.id.listView);
+        this.lv.setAdapter(aa);
 
 
     }
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity
     {
         super.onResume();
         System.out.println("****** ON RESUME!!!!!!");
+
     }
 
     @Override
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity
     protected void onRestart() {
         super.onRestart();
         System.out.println("****** ON RESTART!!!!!!");
+        this.aa.notifyDataSetChanged();
 
     }
 

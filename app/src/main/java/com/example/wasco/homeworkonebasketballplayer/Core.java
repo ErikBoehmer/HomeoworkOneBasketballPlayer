@@ -5,8 +5,7 @@ import com.example.wasco.homeworkonebasketballplayer.BasketballPlayer;
 
 public class Core
 {
-    private static BasketballPlayer[] thePlayers = new BasketballPlayer[1000];
-    public static String[] Players = new String[1000];
+    public static BasketballPlayer[] thePlayers = new BasketballPlayer[1000];
     private static int numberOfPlayers = 0;
 
     public static void addPlayerRecord(BasketballPlayer pr)
@@ -21,7 +20,6 @@ public class Core
     {
         for(int i = 0; i < 1000; i++)
         {
-            Players[i] = " ";
         }
     }
 
@@ -30,7 +28,6 @@ public class Core
 
         for(int i = 0; i < numberOfPlayers; i++)
         {
-            Players[i] = thePlayers[i].Basket();
 
         }
 
