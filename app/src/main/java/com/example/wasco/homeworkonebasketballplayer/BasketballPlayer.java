@@ -1,13 +1,17 @@
 package com.example.wasco.homeworkonebasketballplayer;
 
-public class BasketballPlayer
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
+
+public class BasketballPlayer implements Serializable
 {//Fields needed to define our basketball player for the team
-    private String Firstname;
-    private String Lastname;
-    private int jerseynumber;
-    private int age;
-    private int heightInches;
-    private int heightFeet;
+    public String Firstname;
+    public String Lastname;
+    public int jerseynumber;
+    public int age;
+    public int heightInches;
+    public int heightFeet;
 
     public BasketballPlayer(String Firstname, String Lastname, int jerseynumber, int age, int heightInches, int heightFeet)
     {//this is our constructor
@@ -66,7 +70,7 @@ public class BasketballPlayer
         return heightFeet;
     }
     //theses are setters
-
+@Exclude
     public void setJerseynumber(int jerseynumber)
     {
         if (jerseynumber >= 0)
@@ -74,7 +78,7 @@ public class BasketballPlayer
             this.jerseynumber = jerseynumber;
         }
     }
-
+@Exclude
     public void setAge(int age)
     {
         if(age >= 6)
@@ -82,7 +86,7 @@ public class BasketballPlayer
             this.age = age;
         }
     }
-
+@Exclude
     public void setHeightInches(int heightInches)
     {
         if(heightInches >= 4)
@@ -90,7 +94,7 @@ public class BasketballPlayer
             this.heightInches = heightInches;
         }
     }
-
+@Exclude
     public void setHeightFeet(int heightFeet)
     {
         if(heightFeet >= 0)

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 import com.example.wasco.homeworkonebasketballplayer.BasketballPlayerArrayAdapter;
 
 
@@ -26,8 +25,7 @@ public class MainActivity extends AppCompatActivity
         this.aa = new BasketballPlayerArrayAdapter(this, R.layout.list_view_advaanced, Core.thePlayers);
         this.lv = (ListView)this.findViewById(R.id.listView);
         this.lv.setAdapter(aa);
-
-
+        Core.listenForDatabaseChanges();
     }
 
     @Override
