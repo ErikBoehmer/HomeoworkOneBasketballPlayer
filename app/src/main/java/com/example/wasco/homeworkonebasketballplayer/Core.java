@@ -14,7 +14,7 @@ public class Core
     private static int numberofPlayers = 0;
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
     public static DatabaseReference myRef = database.getReference("players");
-
+    public static BasketballPlayerArrayAdapter aa;
     public static void listenForDatabaseChanges()
     {
         //async listener
@@ -24,13 +24,16 @@ public class Core
             public void onDataChange(DataSnapshot dataSnapshot)
             {
                 // Get Post object and use the values to update the UI
-                System.out.println(dataSnapshot);
+                System.out.println("****" + dataSnapshot.getValue());
+                //Goes through each json object and turns it into player
+                Core.numberofPlayers = 0;
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
                     BasketballPlayer pr = ds.getValue(BasketballPlayer.class);
-                    System.out.println("***** Data Changed");
-                    pr.display();
+                    Core.addPatientRecordLocal(pr);
                 }
+                Core.aa.notifyDataSetChanged();
+
 
             }
 
@@ -38,7 +41,7 @@ public class Core
             public void onCancelled(DatabaseError databaseError)
             {
                 // Getting Post failed, log a message
-                System.out.println("loadPost:onCancelled " + databaseError.toException());
+                System.out.println("loadPost:onCancelled" + databaseError.toException());
             }
         };
         Core.myRef.addValueEventListener(prListener);
@@ -49,13 +52,17 @@ public class Core
         //static context
         Core.myRef.push().setValue(pr);
     }
-
-    public static void addPatientRecord(BasketballPlayer pr)
+    public static void addPatientRecordLocal(BasketballPlayer pr)
     {
-        //encapsulated the logic of adding patient records here
         Core.thePlayers[Core.numberofPlayers] = pr;
         Core.thePlayerstStrings[Core.numberofPlayers] = pr.toString();
         Core.numberofPlayers++;
+    }
+
+    public static void addPatientRecordDB(BasketballPlayer pr)
+    {
+        //encapsulated the logic of adding patient records here
+        //Core.addPatientRecordLocal(pr);
         Core.writePatientRecordToFirebase(pr);
     }
 }

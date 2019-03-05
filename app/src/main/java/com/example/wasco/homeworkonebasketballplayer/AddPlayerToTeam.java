@@ -34,7 +34,7 @@ public class AddPlayerToTeam extends AppCompatActivity {
                 Integer.parseInt(feetET.getText().toString())
         );
 
-        Core.addPlayerRecord(pr);
+        Core.addPatientRecordDB(pr);
         this.finish();
 
     }

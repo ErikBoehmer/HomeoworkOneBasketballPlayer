@@ -11,8 +11,8 @@ import com.example.wasco.homeworkonebasketballplayer.BasketballPlayerArrayAdapte
 
 public class MainActivity extends AppCompatActivity
 {
-    private ListView lv;
-    private BasketballPlayerArrayAdapter aa;
+    public ListView lv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("****** ON CREATE!!!!!!");
-        this.aa = new BasketballPlayerArrayAdapter(this, R.layout.list_view_advaanced, Core.thePlayers);
+
+        Core.aa = new BasketballPlayerArrayAdapter(this, R.layout.list_view_advaanced, Core.thePlayers);
         this.lv = (ListView)this.findViewById(R.id.listView);
-        this.lv.setAdapter(aa);
+        this.lv.setAdapter(Core.aa);
         Core.listenForDatabaseChanges();
     }
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity
     protected void onRestart() {
         super.onRestart();
         System.out.println("****** ON RESTART!!!!!!");
-        this.aa.notifyDataSetChanged();
+        Core.aa.notifyDataSetChanged();
 
     }
 
