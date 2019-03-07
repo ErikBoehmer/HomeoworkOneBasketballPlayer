@@ -1,6 +1,5 @@
 package com.example.wasco.homeworkonebasketballplayer;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +24,7 @@ public class AddPlayerToTeam extends AppCompatActivity {
         EditText inchesET = (EditText)this.findViewById(R.id.inchesET);
         EditText feetET = (EditText)this.findViewById(R.id.feetET);
 
-        BasketballPlayer pr = new BasketballPlayer(
+        basketballPlayer pr = new basketballPlayer(
                 FirstNameET.getText().toString(),
                 lastNameET.getText().toString(),
                 Integer.parseInt(numberET.getText().toString()),

@@ -18,6 +18,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         //initializes the array of Strings so there are place holder strings in there
+        for(int i = 0; i < Core.thePlayers.length; i++)
+        {
+            Core.thePlayers[i] = new basketballPlayer("","",0,0,0,0);
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -26,6 +30,18 @@ public class MainActivity extends AppCompatActivity
         this.lv = (ListView)this.findViewById(R.id.listView);
         this.lv.setAdapter(Core.aa);
         Core.listenForDatabaseChanges();
+
+        LinkedList linkedFront = new LinkedList();
+        linkedFront.addFront(1);
+        linkedFront.addFront(2);
+        linkedFront.addFront(3);
+        linkedFront.display();
+
+        LinkedList linkedEnd = new LinkedList();
+        linkedEnd.addEnd(1);
+        linkedEnd.addEnd(2);
+        linkedEnd.addEnd(3);
+        linkedEnd.display();
     }
 
     @Override

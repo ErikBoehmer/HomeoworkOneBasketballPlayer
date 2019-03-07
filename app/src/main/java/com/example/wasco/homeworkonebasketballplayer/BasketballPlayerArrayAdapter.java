@@ -1,27 +1,21 @@
 package com.example.wasco.homeworkonebasketballplayer;
 
 import android.content.Context;
-import android.graphics.Movie;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-import org.w3c.dom.Text;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BasketballPlayerArrayAdapter extends ArrayAdapter
 {
     private Context mContext;
-    private BasketballPlayer[] playerRecordList = new BasketballPlayer[1000];
+    private basketballPlayer[] playerRecordList = new basketballPlayer[1000];
     private int textViewResourceId;
 
-    public BasketballPlayerArrayAdapter(Context context, int textViewResourceId, BasketballPlayer[] list)
+    public BasketballPlayerArrayAdapter(Context context, int textViewResourceId, basketballPlayer[] list)
     {
         super(context, textViewResourceId , list);
         mContext = context;
@@ -41,7 +35,7 @@ public class BasketballPlayerArrayAdapter extends ArrayAdapter
         }
 
 
-        BasketballPlayer pr = this.playerRecordList[position];
+        basketballPlayer pr = this.playerRecordList[position];
 
         TextView FirstnameTv = (TextView)listItem.findViewById(R.id.FirstnameTV);
         TextView LastnameTV = (TextView)listItem.findViewById(R.id.lastNameTV);

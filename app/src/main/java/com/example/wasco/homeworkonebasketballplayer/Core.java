@@ -9,7 +9,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Core
 {
-    public static BasketballPlayer[] thePlayers = new BasketballPlayer[1000];
+    public static basketballPlayer[] thePlayers = new basketballPlayer[1000];
     public static String[] thePlayerstStrings = new String[1000];
     private static int numberofPlayers = 0;
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -29,7 +29,7 @@ public class Core
                 Core.numberofPlayers = 0;
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
-                    BasketballPlayer pr = ds.getValue(BasketballPlayer.class);
+                    basketballPlayer pr = ds.getValue(basketballPlayer.class);
                     Core.addPatientRecordLocal(pr);
                 }
                 Core.aa.notifyDataSetChanged();
@@ -47,19 +47,19 @@ public class Core
         Core.myRef.addValueEventListener(prListener);
     }
 
-    public static void writePatientRecordToFirebase(BasketballPlayer pr)
+    public static void writePatientRecordToFirebase(basketballPlayer pr)
     {
         //static context
         Core.myRef.push().setValue(pr);
     }
-    public static void addPatientRecordLocal(BasketballPlayer pr)
+    public static void addPatientRecordLocal(basketballPlayer pr)
     {
         Core.thePlayers[Core.numberofPlayers] = pr;
         Core.thePlayerstStrings[Core.numberofPlayers] = pr.toString();
         Core.numberofPlayers++;
     }
 
-    public static void addPatientRecordDB(BasketballPlayer pr)
+    public static void addPatientRecordDB(basketballPlayer pr)
     {
         //encapsulated the logic of adding patient records here
         //Core.addPatientRecordLocal(pr);

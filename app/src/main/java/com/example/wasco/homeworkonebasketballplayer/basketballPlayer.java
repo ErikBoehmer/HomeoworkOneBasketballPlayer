@@ -4,8 +4,9 @@ import com.google.firebase.database.Exclude;
 
 import java.io.Serializable;
 
-public class BasketballPlayer implements Serializable
-{//Fields needed to define our basketball player for the team
+public class basketballPlayer implements Serializable
+{
+    //Fields needed to define our basketball player for the team
     public String Firstname;
     public String Lastname;
     public int jerseynumber;
@@ -13,8 +14,9 @@ public class BasketballPlayer implements Serializable
     public int heightInches;
     public int heightFeet;
 
-    public BasketballPlayer(String Firstname, String Lastname, int jerseynumber, int age, int heightInches, int heightFeet)
-    {//this is our constructor
+    public basketballPlayer(String Firstname, String Lastname, int jerseynumber, int age, int heightInches, int heightFeet)
+    {
+        //this is our constructor
         this.Firstname = Firstname;
         this.Lastname = Lastname;
         this.jerseynumber = jerseynumber;
@@ -28,9 +30,6 @@ public class BasketballPlayer implements Serializable
     {
         System.out.println(this.Firstname + " " + this.Lastname + " " + this.jerseynumber + " " + this.age
                 + " " + this.heightInches + " ( " + this.heightFeet + " )");
-
-
-
     }
 
     public String Basket()
